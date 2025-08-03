@@ -22,3 +22,7 @@ body {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 }
+
+.border-foreground {
+  border-color: var(--foreground);
+}

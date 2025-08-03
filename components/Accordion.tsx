@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { cn } from "@/utils";
-import PlusIcon from "../public/icons/plus.svg";
-import MinusIcon from "../public/icons/minus.svg";
+import PlusIcon from "@/icons/plus.svg";
+import MinusIcon from "@/icons/minus.svg";
 
 interface FAQData {
   question: string;

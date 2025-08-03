@@ -2,7 +2,8 @@
 
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
+import MoonIcon from "@/icons/moon.svg";
+import SunIcon from "@/icons/sun.svg";
 
 export default function ThemeToggle() {
   const [mounted, setMounted] = useState(false)
@@ -23,21 +24,9 @@ export default function ThemeToggle() {
       aria-label="Toggle theme"
     >
       {theme === 'light' ? (
-        <Image
-          src="/icons/moon.svg"
-          alt="Dark mode"
-          width={24}
-          height={24}
-          className="h-6 w-6"
-        />
+        <MoonIcon className="h-6 w-6" />
       ) : (
-        <Image
-          src="/icons/sun.svg"
-          alt="Light mode"
-          width={24}
-          height={24}
-          className="h-6 w-6"
-        />
+        <SunIcon className="h-6 w-6" />
       )}
     </button>
   )

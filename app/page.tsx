@@ -1,6 +1,8 @@
 'use client'
+import { Suspense } from 'react'
 import Accordion from '@/components/Accordion'
 import ThemeToggle from '@/components/ThemeToggle'
+import Loader from '@/components/Loader'
 
 const faqData = [
   {
@@ -28,9 +30,13 @@ const faqData = [
 export default function Home() {
   return (
     <div className="min-h-screen p-8 sm:p-20 bg-background">
-      <ThemeToggle />
+      <Suspense fallback={<div className="fixed top-4 right-4 p-2 rounded-lg bg-gray-200 w-10 h-10 animate-pulse" />}>
+        <ThemeToggle />
+      </Suspense>
       <main className="flex flex-col items-center justify-center">
-        <Accordion items={faqData} />
+        <Suspense fallback={<Loader />}>
+          <Accordion items={faqData} />
+        </Suspense>
       </main>
     </div>
   )
